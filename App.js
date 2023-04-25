@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { colors } from './src/theme/colors';
 import { spacing } from './src/theme/spacing';
 import { useFonts } from 'expo-font';
 import { typography } from './src/theme/typography';
+import Text from './src/components/text/text';
 
 export default function App() {
   const [loaded] = useFonts({
@@ -20,10 +21,9 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <Text style={{fontFamily: typography.primary, fontSize: spacing[5]}}>Hello!</Text>
-      <Text style={{ marginTop: spacing[4], fontFamily: typography.primaryBold, fontSize: spacing[4]}}>Hello Again!</Text>
-      <Text style={{ marginTop: spacing[4], fontFamily: typography.bold, fontSize: spacing[4]}}>Hello Again, Yanis!</Text>
-
+      <Text preset='h1'>Awesome Project</Text>
+      <Text preset='h2'>React Native App</Text>
+      <Text preset='small' style={{marginTop:spacing[3]}}>Developed By Yanis Ahmed</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -32,7 +32,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.darkOrange,
+    backgroundColor: colors.black,
     alignItems: 'center',
     justifyContent: 'center',
   },
